@@ -1,10 +1,11 @@
 gsap.registerPlugin(ScrollTrigger);
 
 let isMobile = window.matchMedia("(max-width: 460px)");
-let headerTL = gsap.timeline();
-
-gsap.set("body", { overflow: "hidden" });
-
+let headerTL = gsap.timeline()
+gsap.set("body", { overflow: "hidden" })
+headerTL.set(".screen-hide", {
+  opacity: 0, ease: "ease.out",
+});
 if (!isMobile.matches) {
   headerTL
     .set(".menu__item", { opacity: 0, yPercent: 100 })

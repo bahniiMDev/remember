@@ -84,6 +84,15 @@ body {
   font-weight: 300;
 }
 /* ------ОСНОВНЕ------------------------------------------------------------- */
+.screen-hide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100dvh;
+  background: #ffffff;
+  z-index: 100;
+}
 .wrapper {
   min-height: 100%;
   overflow: hidden;
@@ -237,7 +246,6 @@ body {
   background: #000;
   border-radius: 50px;
   aspect-ratio: 1;
-
 }
 .menu__list {
   height: 100%;
