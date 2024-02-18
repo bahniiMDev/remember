@@ -13,7 +13,7 @@ if (!isMobile.matches) {
       delay: 1.2,
       duration: 1.2,
       width: "100vw",
-      height: "100dvh",
+      height: "100lvh",
       ease: "back.inOut(1)",
     })
     .from(
@@ -77,7 +77,7 @@ if (isMobile.matches) {
       delay: 1.2,
       duration: 1.2,
       width: "100vw",
-      height: "100dvh",
+      height: "100lvh",
       ease: "back.inOut(1)",
     })
     .from(
@@ -122,8 +122,13 @@ headerTL.set("body", { overflow: "visible" });
 window.addEventListener("resize", () => {
   if (isMobileold != isMobile.matches) {
     isMobileold = isMobile.matches;
+    headerTL.set(".screen-hide", {
+      opacity: 1, ease: "ease.out",
+    });
     if (!isMobile.matches) {
-      headerTL
+      headerTL.set(".screen-hide", {
+        opacity: 0, ease: "ease.out",
+      })
         .set(
           ".header__menu",
           {
@@ -143,7 +148,7 @@ window.addEventListener("resize", () => {
           delay: 1.2,
           duration: 1.2,
           width: "100vw",
-          height: "100dvh",
+          height: "100lvh",
           ease: "back.inOut(1)",
         })
         .from(
@@ -200,7 +205,9 @@ window.addEventListener("resize", () => {
         ).set("body", { overflow: "visible" });
     }
     if (isMobile.matches) {
-      headerTL
+      headerTL.set(".screen-hide", {
+        opacity: 1, ease: "ease.out",
+      })
         .set(".header__menu", {
           opacity: 0,
           height: "calc(40px + (56 - 40) * ((100vw - 375px) / (768 - 375)))",
@@ -216,7 +223,7 @@ window.addEventListener("resize", () => {
           delay: 1.2,
           duration: 1.2,
           width: "100vw",
-          height: "100dvh",
+          height: "100lvh",
           ease: "back.inOut(1)",
         })
         .from(
